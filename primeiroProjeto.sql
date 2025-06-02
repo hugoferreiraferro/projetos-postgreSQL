@@ -95,3 +95,59 @@ insert into cliente (idcliente, nome, cpf, rg, data_nascimento, genero, profissa
 logradouro, numero, complemento, bairro, municipio, uf, observacoes)
 values(15, 'Jessica', null, null, null, --padrão americano,
 'F', 'Estudante', null, null, null, null, null, 'União da Vitória', 'PR', null);
+
+select * from cliente; --o * indica que é TODA a tabela
+
+select nome, data_nascimento from cliente; -- sem o * seleciona apenas o que vc quer pelo nome
+
+select nome, data_nascimento as "Data de nascimento" from cliente; --renomeia a coluna
+
+select 'CPF: ' || cpf  || ' RG:'|| rg as "CPF e RG" from cliente; -- o || realiza concatenação 
+
+select * from cliente limit 3; -- seleciona os três primeiros clientes no banco de dados por ordem da tabela
+
+select nome, data_nascimento from cliente where data_nascimento > '2000-01-01'; -- retorna os pedidos e adiciona um filtro
+
+select nome from cliente where nome like 'C%'; -- o like é COMO (parecido com o if e o operador igual) o % diz que depois da letra C pode ser qualquer
+
+select nome from cliente where nome like '%c%'; -- diz que entre o começo e o fim (começo e fim podem se qualquer caractere) e entre eles um C
+
+select nome, data_nascimento from cliente where data_nascimento between '1990-01-01' and '1998-01-01'; -- between quer dizer entre, ou seja entre X data e Y data
+
+select nome, rg from cliente where rg is null; -- ou onde o rg é null retornar os nomes
+
+select nome from cliente order by nome; --retornar em ORDEM alfabética
+
+select nome from cliente order by nome asc;
+
+select nome from cliente order by nome desc; -- ordem descendete
+
+select nome, genero, profissao from cliente order by nome desc;
+
+select nome from cliente where nome like '%r%';
+
+select nome from cliente where nome like 'C%';
+
+select nome from cliente where nome like '%a';
+
+select nome, bairro from cliente where bairro = 'Centro' or bairro = 'Cto.' or bairro = 'Ctr.'; -- igual é igual (is) observação importante duas asppas compara coluna!!
+
+select nome, complemento from cliente where complemento like 'A%';
+
+select nome, genero from cliente where genero = 'F';
+
+select nome, cpf from cliente where cpf is null;
+
+select 'Nome: ' || nome || ' Profissão: ' || profissao as "Nome e Profissão: " from cliente order by profissao asc;
+
+select nome, nacionalidade from cliente where nacionalidade = 'Brasileira';
+
+select nome, numero from cliente where numero is not null;
+
+select nome, uf from cliente where uf = 'SC';
+
+select nome, data_nascimento from cliente where data_nascimento between '2000-01-01' and '2001-01-01';
+
+select 'Nome: ' || nome || ' Logradouro: ' || logradouro || ' Numero: ' || numero ||
+ 'Complemento: ' || complemento || ' Bairro: ' || bairro ||
+' Município: ' ||municipio || ' Uf: ' || uf as "Dados de locailidade:" from cliente;
