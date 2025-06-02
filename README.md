@@ -1,1 +1,1 @@
-ATENÇÃO!! Todos so scripts com dados aqui são FICTÍCIOS 
+ATENÇÃO!! Todos os scripts com dados aqui são FICTÍCIOS 
