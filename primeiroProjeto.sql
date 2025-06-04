@@ -151,3 +151,12 @@ select nome, data_nascimento from cliente where data_nascimento between '2000-01
 select 'Nome: ' || nome || ' Logradouro: ' || logradouro || ' Numero: ' || numero ||
  'Complemento: ' || complemento || ' Bairro: ' || bairro ||
 ' Município: ' ||municipio || ' Uf: ' || uf as "Dados de locailidade:" from cliente;
+
+create table profissao (
+   idprofissao integer not null,
+   nome varchar (30) not null,
+
+   constraint pk_prf_idprofissao primary key (idprofissao),
+   constraint un_prf_nome unique (nome)
+
+);
